@@ -2,6 +2,8 @@ class DevicesController < ApplicationController
   disallow_account_scope
   before_action :set_device, only: :destroy
 
+  layout "public"
+
   def index
     @devices = Current.identity.devices.order(created_at: :desc)
   end
